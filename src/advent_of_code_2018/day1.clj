@@ -3,11 +3,9 @@
 
 (def input
   (map #(Integer/parseInt %)
-       (s/split (slurp "inputs\\day1.txt")
-                #"\r\n")))
+       (s/split-lines (slurp "inputs\\day1.txt"))))
 
-(defn part-1 [input]
-  (reduce + input))
+(def part-1 (partial reduce +))
 
 (defn part-2 [input]
   (reduce (fn [cache val]
