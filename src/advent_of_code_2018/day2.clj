@@ -25,9 +25,9 @@
 
 (defn part-2 [input]
   (let [[match] (for [x input
-                        y input
-                        :when (one-off? x y)]
-                    [x y])]
+                      y input
+                      :when (one-off? x y)]
+                  [x y])]
     (->> match
          (apply map eq-or-nil)
          (filter identity)
