@@ -4,13 +4,6 @@
 (def input (map (comp (partial map #(Integer/parseInt %))
                       #(s/split % #", "))
                 (s/split-lines (slurp "inputs\\day6.txt"))))
-(def test-input
-  [[1 1]
-   [1 6]
-   [8 3]
-   [3 4]
-   [5 5]
-   [8 9]])
 
 (defn grid [ps]
   (for [x (range (apply min (map first ps)) (inc (apply max (map first ps))))
