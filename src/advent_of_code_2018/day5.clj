@@ -44,7 +44,7 @@
         to-remove (set (flatten (remove (partial contains-pair? indices) indices)))]
     (if (empty? to-remove)
       (count input)
-      #(part-1-2 (filter identity (map-indexed (fn [i x] (when-not (contains? to-remove i) x)) input))))))
+      #(part-1 (filter identity (map-indexed (fn [i x] (when-not (contains? to-remove i) x)) input))))))
 
 (defn pairs [pred s]
   (lazy-seq
